@@ -8,7 +8,7 @@
 
     <section class="section-room bg-white">
         <div class="container">
-
+            {!! Breadcrumbs::renderIfExists('activity.index') !!}
             <div class="room-wrap-5">
                 <div class="row">
                     @foreach($activities as $activity)

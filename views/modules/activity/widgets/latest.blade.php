@@ -66,7 +66,7 @@
             $('.owl-event-dates').owlCarousel({
                 items: 2,
                 dots: false,
-                loop: true,
+                loop: false,
                 smartSpeed:250,
                 autoplay: true,
                 autoplayTimeout: 3000

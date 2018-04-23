@@ -78,7 +78,7 @@
 			content: '';
 			opacity: 0;
 			pointer-events: none;
-			@include gradient(transparent, #344a71);
+			@include gradient(rgba($themecolor,0), rgba($themecolor-alt,0.7));
 			@include transition(all 0.3s ease-out);
 		}
 
@@ -198,7 +198,7 @@
 		.mfp-figure {
 			
 			padding-bottom: 0;
-			background-color: #1f232b;
+			background-color: $themecolor-dark;
 			position: relative;
 
 			&:after {
