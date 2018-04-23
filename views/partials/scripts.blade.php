@@ -16,7 +16,7 @@
 {!! Asset::js() !!}
 
 <!-- Custom jQuery -->
-{!! Theme::script("js/scripts.js") !!}
+{!! Theme::script("js/scripts.min.js") !!}
 
 @stack('css-inline')
 @stack('js-inline')

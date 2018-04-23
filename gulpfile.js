@@ -50,7 +50,7 @@ gulp.task('sass-source', function () {
     ])
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(sourcemaps.write(resourceDir+'/maps'))
+        .pipe(sourcemaps.write(cssDir+'/maps'))
         .pipe(gulp.dest(cssDir))
         .pipe(browserSync.reload({
             stream: true
@@ -58,9 +58,9 @@ gulp.task('sass-source', function () {
 });
 
 gulp.task('sass-public', function () {
-    gulp.src([
-        sassDir + '/**/*.scss'
-    ])
+        gulp.src([
+            sassDir + '/**/*.scss'
+        ])
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(sourcemaps.write(themePath+'/maps'))
@@ -70,14 +70,27 @@ gulp.task('sass-public', function () {
         }));
 });
 
+gulp.task('jalendar-sass-public', function(){
+    return gulp.src([
+        vendorDir + '/jalendar/style/jalendar.scss'
+    ])
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sourcemaps.write(themePath+'/vendor/jalendar/style'))
+    .pipe(gulp.dest(themePath + '/vendor/jalendar/style'))
+    .pipe(browserSync.reload({
+        stream: true
+    }));
+});
+
 gulp.task('jalendar-sass', function(){
-    gulp.src([
+    return gulp.src([
         vendorDir + '/jalendar/style/jalendar.scss'
     ])
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(sourcemaps.write(themePath+'/vendor/jalendar/style'))
-        .pipe(gulp.dest(themePath + '/vendor/jalendar/style'))
+        .pipe(sourcemaps.write(vendorDir+'/jalendar/style'))
+        .pipe(gulp.dest(vendorDir + '/jalendar/style'))
         .pipe(browserSync.reload({
             stream: true
         }));
@@ -102,12 +115,27 @@ gulp.task('revolution.combine', function() {
         .pipe(gulp.dest(vendorDir+ "/revolution/js"));
 });
 
-gulp.task('compress', function () {
-    gulp.src(jsDir+"/scripts-min.js")
-        .pipe(clean());
+gulp.task('clean-compress',function(){
+   return gulp.src(jsDir+"/scripts.min.js")
+       .pipe(clean());
+});
+
+gulp.task('compress', ['clean-compress'], function () {
     return gulp.src(jsDir + "/scripts.js")
-        .pipe(minify())
+        .pipe(minify({
+            ext: {
+                min: '.min.js'
+            }
+        }))
         .pipe(gulp.dest(jsDir));
+});
+
+gulp.task('clean-assets', function () {
+   return gulp.src([
+       assetsDir+'/css',
+       assetsDir+'/js'
+   ])
+       .pipe(clean());
 });
 
 gulp.task('copy', function () {
@@ -120,7 +148,7 @@ gulp.task('js-public', function(){
         .pipe(gulp.dest(themePath+'/js'));
 });
 
-gulp.task('production', ['clear-public', 'sass-source', 'revolution.combine', 'compress', 'copy'], function () {
+gulp.task('production', ['clear-public', 'sass-source', 'jalendar-sass', 'revolution.combine', 'compress', 'copy'], function () {
     return gulp.src("").pipe(shell("php ../../artisan stylist:publish " + theme.name));
 });
 
@@ -149,7 +177,7 @@ gulp.task('browser-sync', function() {
 
 gulp.task('watch', ['browser-sync'], function () {
     gulp.watch([sassDir + '/**/*.scss'], ['sass-public']);
-    gulp.watch([vendorDir + '/jalendar/style/**/*.scss'], ['jalendar-sass']);
+    gulp.watch([vendorDir + '/jalendar/style/**/*.scss'], ['jalendar-sass-public']);
     gulp.watch('views/**/*.php', browserSync.reload);
     gulp.watch(resourceAssetsDir+'/js/**/*.js', ['compress']);
     gulp.watch(resourceAssetsDir+'/js/**/*.js', ['js-public']);

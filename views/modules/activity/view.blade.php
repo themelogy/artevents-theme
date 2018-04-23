@@ -37,9 +37,9 @@
                                                 {{ trans('themes::activity.title.hour') }}
                                                 <span>{{ $event->event_at->format('H:i') }}</span>
                                             </div>
-                                            @if(!empty($activity->ticket_url))
+                                            @if(!empty($event->ticket_url))
                                             <div class="ticket">
-                                                <a href="{{ $activity->ticket_url }}">{{ trans('themes::activity.buttons.buy ticket') }}</a>
+                                                <a target="_blank" href="{{ $event->ticket_url }}">{{ trans('themes::activity.buttons.buy ticket') }}</a>
                                             </div>
                                             @endif
                                         </div>
