@@ -164,13 +164,14 @@
         content: '';
         opacity: 0;
         pointer-events: none;
+        z-index: 5;
         @include gradient(rgba($themecolor,0), rgba($themecolor-alt,0.7));
         @include transition(all 0.3s ease-out);
       }
     }
     .text {
       font-size: 14px;
-      padding: 15px;
+      padding: 10px 15px;
       .date {
         color: $grey;
         font-size: 1.25rem;
@@ -185,8 +186,8 @@
         font-weight: 700;
         font-family: $montserrat;
         text-transform: uppercase;
-        min-height: 25px;
-        max-height: 25px;
+        min-height: 50px;
+        max-height: 50px;
         letter-spacing: -0.025em;
         a {
           color: $themecolor;

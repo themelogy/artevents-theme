@@ -628,9 +628,11 @@
 		h2 {
 			text-transform: uppercase;
 			font-weight: bold;
-			font-size: 30px; 
+			font-size: 3rem;
 			font-family: $montserrat;
-
+			line-height: 3.5rem;
+			position: absolute;
+			bottom: 30px;
 			a {
 				color: #fff;
 			}
@@ -658,7 +660,7 @@
 
 		h3 {
 			color: #333;
-			font-size: 30px;
+			font-size: 2rem;
 			text-transform: uppercase;
 			font-family: $montserrat;
 			font-weight: bold;
@@ -676,7 +678,7 @@
 
 		p {
 			color: #898989;
-			font-size: 15px;
+			font-size: 1.25rem;
 			margin-bottom: 0;
 			margin-top: 30px;
 

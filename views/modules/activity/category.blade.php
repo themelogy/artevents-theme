@@ -6,35 +6,13 @@
         <h1>{{ $category->title }}</h1>
     @endcomponent
 
-    <section class="section-room bg-white">
+    <section class="section-room bg-white no-padding">
         <div class="container">
             {!! Breadcrumbs::renderIfExists('activity.category') !!}
-            <div class="room-wrap-5">
+            <div class="room-wrap-5 m-top-20 m-bot-40">
                 <div class="row">
                     @foreach($activities as $activity)
-                    <div class="col-xs-6">
-                        <div class="room_item-5" data-background='{{ $activity->present()->coverImage(570,330,'fit',80) }}'>
-
-                            <div class="img">
-                                <a href="{{ $activity->url }}"><img src="{{ $activity->present()->coverImage(570,330,'fit',80) }}" alt=""></a>
-                            </div>
-
-                            <div class="room_item-forward">
-                                <h2><a href="{{ $activity->url }}">{{ $activity->title }}</a></h2>
-                                <span class="price">{{ $activity->category->title }}</span>
-                            </div>
-
-                            <div class="count-date" data-end="{{ $activity->events()->first()->event_at->format('Y/m/d H:i:s') }}"></div>
-
-                            <div class="room_item-back">
-                                <h3>{{ $activity->title }}</h3>
-                                <span class="price">{{ $activity->category->title }}</span>
-                                <p>{{ str_sentence(Str::words(strip_tags($activity->description), 20), 16) }}</p>
-                                <a href="{{ $activity->url }}" class="awe-btn awe-btn-13">{{ trans('themes::activity.buttons.details') }}</a>
-                            </div>
-
-                        </div>
-                    </div>
+                        @include('activity::_activity')
                     @endforeach
                 </div>
                 {!! $activities->render('partials.components.pagination') !!}
