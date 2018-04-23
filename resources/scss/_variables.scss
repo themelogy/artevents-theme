@@ -1,0 +1,62 @@
+//Colors
+$dark-grey                      : darken(white, 80%);
+$grey                           : darken(white, 60%);
+$light-grey                     : darken(white, 20%);
+
+$themecolor                     : $dark-grey;
+$themecolor-alt                 : #FDCD06;
+$themecolor-alt2                : #EF842D;
+$themecolor-dark                : mix($dark-grey, $themecolor-alt2, 95%);
+$color                          : #232323;
+$white                          : #ffffff;
+$hover                          : #FDCD06;
+
+//Fonts
+$default-font                   : 'Poppins', sans-serif;
+$font-handwrite                 : 'Lobster', cursive;
+$hind                           : 'Hind', sans-serif;
+$montserrat                     : 'Montserrat', sans-serif;
+
+//Body
+$default-bg-color               : darken(white, 7%);
+$default-txt-color              : $themecolor;
+
+//Header
+$header-bg-color                : rgba($themecolor-dark, 0.65);
+$header-top-bg-color            : $white;
+$header-logo-bg-color           : $white;
+
+$top-link-color                 : $grey;
+$top-link-hover-color           : $themecolor;
+$top-dropdown-bg-color          : #fff;
+$top-dropdown-hover-bg-color    : $themecolor-alt;
+$top-dropdown-hover-color       : darken(white, 60%);
+$top-dropdown-current-bg-color  : $themecolor-alt;
+$top-dropdown-current-color     : darken(white, 60%);
+
+$menu-link-current-bg-color     : transparent;
+$menu-link-current-color        : $themecolor-alt;
+$menu-link-border-color         : $themecolor-alt;
+$menu-link-color                : #fff;
+$menu-link-hover-bg-color       : $themecolor-alt;
+$menu-link-hover-color          : $themecolor-alt;
+
+$menu-sub-bg-color              : $themecolor-alt;
+$menu-sub-border                : 1px solid $themecolor-alt;
+$menu-sub-padding               : 0;
+
+$menu-sub-link-color            : #fff;
+$menu-sub-hover-bg-color        : $themecolor-dark;
+$menu-sub-hover-color           : $themecolor-alt;
+$menu-sub-current-bg-color      : darken(white, 60%);
+$menu-sub-current-color         : $themecolor-alt;
+
+$mobile-menu-bars-bg-color        : $themecolor;
+$mobile-menu-bars-active-bg-color : $themecolor;
+$mobile-menu-bg-color             : rgba($themecolor-dark, 0.85);
+$mobile-menu-sub-bg-color         : rgba($grey, 0.50);
+
+//Footer
+$footer-bg-color                : $themecolor-dark;
+$footer-top-bg-color            : rgba(lighten($themecolor-dark, 10%), 0.75);
+$footer-bottom-bg-color         : rgba(darken($themecolor-dark, 5%), 0.75);

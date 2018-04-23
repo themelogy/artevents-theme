@@ -1,0 +1,21 @@
+{
+  "name": "Artevents",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "themelogy <designer@visualturk.net>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "owl.carousel": "^2.3.4"
+  }
+}
