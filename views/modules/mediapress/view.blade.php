@@ -8,9 +8,7 @@
 
     <section class="section-blog bg-white">
         <div class="container">
-
             {!! Breadcrumbs::renderIfExists('mediapress.category') !!}
-
             <div class="blog">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">

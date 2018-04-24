@@ -8,9 +8,7 @@
 
     <section class="section-activiti bg-white no-padding">
         <div class="container">
-
             {!! Breadcrumbs::renderIfExists('mediapress.category') !!}
-
             <div class="activiti m-top-20 m-bot-50">
                 <div class="gallery-cat activiti-cat text-center">
                     <ul class="list-inline">
@@ -20,11 +18,8 @@
                         @endforeach
                     </ul>
                 </div>
-
                 <div class="activiti_content">
-
                     <div class="row">
-
                         @foreach($medias as $media)
                         <div class="col-md-4 col-xs-6">
                             <div class="activiti_item">
@@ -38,15 +33,10 @@
                             </div>
                         </div>
                         @endforeach
-
                     </div>
-
                     {!! $medias->render('partials.components.pagination') !!}
-
                 </div>
-
             </div>
-
         </div>
     </section>
 
