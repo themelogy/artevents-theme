@@ -10,7 +10,7 @@
         <div class="count-date" data-end="{{ $activity->events()->first()->event_at->format('Y/m/d H:i:s') }}"></div>
         <div class="room_item-back">
             <h3>{{ $activity->title }}</h3>
-            <span class="price">{{ $activity->category->title }}</span>
+            <a href="{{ $activity->category->url }}"><span class="price">{{ $activity->category->title }}</span></a>
             <p>{{ Str::words(strip_tags($activity->description), 15) }}</p>
             <a href="{{ $activity->url }}" class="awe-btn awe-btn-13">{{ trans('themes::activity.buttons.details') }}</a>
         </div>

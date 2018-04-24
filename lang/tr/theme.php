@@ -9,6 +9,7 @@ return [
       'event newsletter' => '<b>ETKİNLİK</b> HABERCİSİ'
   ],
   'buttons' => [
+      'all'     => 'Tümü',
       'biletix' => 'http://www.biletix.com/mekan/RS/ANKARA/tr',
   ],
   'newsletter' => [
