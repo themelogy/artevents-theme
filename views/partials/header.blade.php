@@ -7,7 +7,7 @@
             </div>
             <div class="header_right float-right">
                 @include('partials.components.social', ['list'=>true])
-                @if(isset($currentUser))
+                @if($currentUser)
                 <div class="dropdown">
                     <span>{{ trans('dashboard::dashboard.name') }}</span>
                     <ul>

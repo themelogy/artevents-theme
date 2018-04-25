@@ -24,7 +24,7 @@
                     @endif
                     data-description="">
                     <!-- MAIN IMAGE -->
-                    <img data-lazyload="{!! $slide->present()->firstImage(1170,550,'fit',80) !!}"
+                    <img data-lazyload="{!! $slide->present()->firstImage(1170,600,'fit',80) !!}"
                          alt="{{ $slide->title }}"
                          data-bgposition="center center"
                          data-bgfit="cover"
@@ -115,7 +115,7 @@
         },
         responsiveLevels: [1170, 1024, 778, 480],
         gridwidth: [1170, 1024, 778, 480],
-        gridheight: [550, 450, 350, 300],
+        gridheight: [600, 500, 400, 300],
         lazyType: "smart",
         parallax: {
             type: "mouse",

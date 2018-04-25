@@ -23,7 +23,7 @@
                         </div>
 
                         <div class="map m-top-20" style="height: 250px;">
-                            @gmap('250px', '16', 'images/marker.png')
+                            @gmap('250px', '16', 'images/marker.png', ['draggable'=>true, 'fullscreen'=>true, 'scrollzoom'=>true, 'zoomcontrol'=>true])
                         </div>
 
                     </div>

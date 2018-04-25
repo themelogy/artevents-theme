@@ -2,6 +2,13 @@
     <h2 class="title">{{ trans('themes::contact.write us') }}</h2>
     {!! Form::open(['route' => 'contact.send', 'class' => 'contact', 'method'=>'post']) !!}
     {!! Form::hidden('from', Request::path()) !!}
+
+    @if (session()->has('contact_form_message'))
+        <div class="alert alert-success">
+            {!! session('contact_form_message') !!}
+        </div>
+    @endif
+
         <div class="row">
             <div class="col-sm-6">
                 {!! Form::text('first_name', old('first_name'), ['placeholder'=>trans('contact::contacts.form.first_name'), 'class'=>'field-text']) !!}

@@ -5,6 +5,8 @@
     <meta id="authorization" name="authorization" content="{{ $currentUser->getFirstApiKey() }}" />
 @endif
 
+<link rel="shortcut icon" href="{{ Theme::url('images/favicon.png') }}">
+
 <!-- CSS LIBRARY -->
 {!! Theme::style("css/lib/font-awesome.min.css") !!}
 {!! Theme::style("css/lib/font-hilltericon.css") !!}
