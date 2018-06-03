@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    @include('partials.footer.newsletter')
+                    @include('partials.footer.newsletter-vue')
                 </div>
                 <div class="col-lg-3 col-lg-offset-1 hidden">
                     <div class="social">

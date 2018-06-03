@@ -51,6 +51,9 @@
                                 <div class="entry-content no-padding">
                                     {!! $activity->description !!}
                                 </div>
+                                <div class="socials m-top-20">
+                                    @include('partials.components.share', ['theme'=>'plain'])
+                                </div>
                             </article>
                         </div>
                     </div>

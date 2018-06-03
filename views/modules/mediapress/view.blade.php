@@ -20,6 +20,9 @@
                                 <div class="img align-center">
                                     <img src="{{ $media->present()->firstImage(800,null,'resize',80) }}" alt="{{ $media->title }}">
                                 </div>
+                                <div class="socials m-top-20">
+                                    @include('partials.components.share', ['theme'=>'plain'])
+                                </div>
                             </article>
                         </div>
                     </div>

@@ -38,8 +38,10 @@
                                         </span>
                                         @endif
                                     </p>
+                                    <div class="socials m-top-20">
+                                        @include('partials.components.share', ['theme'=>'plain'])
+                                    </div>
                                 </div>
-
                             </article>
                         </div>
                     </div>
