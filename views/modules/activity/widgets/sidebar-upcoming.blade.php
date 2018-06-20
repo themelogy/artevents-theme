@@ -1,3 +1,4 @@
+@if($activities->count()>0)
 <div class="widget widget_upcoming_events">
     <h4 class="widget-title">{{ trans('themes::activity.title.upcoming events') }}</h4>
     <ul>
@@ -16,3 +17,4 @@
         @endforeach
     </ul>
 </div>
+@endif

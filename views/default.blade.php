@@ -9,32 +9,70 @@
     <section class="section-page">
         <div class="container">
             {!! Breadcrumbs::renderIfExists('page') !!}
-            <div class="page m-top-20 m-bot-30">
-                {!! $page->body !!}
-
-                @php $images = $page->present()->images(970,649,'fit',80) @endphp
-                @if(count($images)>0)
-                <div class="gallery-content">
-                    <div class="row">
-                        <div class="gallery-isotope col-4">
-
-                            <div class="item-size"></div>
-
-                            @foreach($images as $image)
-                            <div class="item-isotope">
-                                <div class="gallery_item">
-                                    <a href="{!! $image !!}" class="mfp-image">
-                                        <img src="{!! $image !!}" alt="">
+            <div class="row">
+                <div class="col-md-12 page m-top-20 m-bot-30">
+                    {!! $page->body !!}
+                </div>
+            </div>
+            @isset($page->settings->show_gallery)
+            <div class="row">
+                <div class="col-md-12 m-bot-30">
+                    <div class="owl-carousel">
+                        @isset($page->files)
+                            @foreach($page->files as $file)
+                                <div>
+                                    <a href="{!! Imagy::getImage($file->filename, 'pageThumbnail', ['width'=>700, 'height'=>null, 'mode'=>'resize', 'quality'=>80]) !!}" data-lightbox="image" data-title="{{ $page->title }}">
+                                    {!! Html::image(Imagy::getImage($file->filename, 'pageThumbnail', ['width'=>400, 'height'=>300, 'mode'=>'fit', 'quality'=>80]), $page->title) !!}
                                     </a>
                                 </div>
-                            </div>
                             @endforeach
-                        </div>
+                        @endif
                     </div>
                 </div>
-                @endif
-
             </div>
+                @push('css-stack')
+                    {!! Asset::add(Theme::url('vendor/owl.carousel/dist/assets/owl.carousel.min.css')) !!}
+                    {!! Asset::add(Theme::url('vendor/owl.carousel/dist/assets/owl.theme.default.min.css')) !!}
+                    {!! Asset::add(Theme::url('vendor/lightbox2/dist/css/lightbox.min.css')) !!}
+                @endpush
+                @push('script-stack')
+                    {!! Asset::add(Theme::url('vendor/owl.carousel/dist/owl.carousel.min.js')) !!}
+                    {!! Asset::add(Theme::url('vendor/lightbox2/dist/js/lightbox.min.js')) !!}
+                @endpush
+                @push('js-inline')
+                    <script>
+                        $(document).ready(function(){
+                            $(".owl-carousel").owlCarousel({
+                                items: 4,
+                                margin: 20,
+                                loop: true,
+                                nav:true,
+                                lazyLoad: true,
+                                autoplay: true,
+                                autoplayTimeout: 3000,
+                                responsive : {
+                                    0 : {
+                                        items: 1
+                                    },
+                                    480 : {
+                                        items: 1
+                                    },
+                                    768 : {
+                                        items: 2
+                                    },
+                                    1024 : {
+                                        items: 3
+                                    },
+                                    1280 : {
+                                        items: 4,
+                                        nav:true
+                                    }
+                                }
+                            });
+                        });
+                    </script>
+                @endpush
+            @endisset
         </div>
     </section>
 

@@ -3,7 +3,7 @@
 @section('content')
 
     @component('partials.components.banner', ['background'=>'bg-5'])
-        <h1>{{ trans('themes::news.title') }}</h1>
+        <h1>{{ $post->title }}</h1>
     @endcomponent
 
     <section class="section-blog bg-white">

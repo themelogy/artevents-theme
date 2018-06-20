@@ -9,10 +9,12 @@
 
         @newsLatestPosts(4, 'sidebar-latest')
 
-        @if(isset($posts))
-            @newsTags($posts)
-        @elseif(isset($post))
+        @if(isset($post))
             @newsTags($post)
+        @elseif(isset($posts))
+            @foreach($posts as $post)
+            @newsTags($post, 1)
+            @endforeach
         @endif
 
         <div class="widget widget_social">

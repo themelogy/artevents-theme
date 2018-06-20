@@ -1,3 +1,4 @@
+@if($activities->count()>0)
 <div class="widget widget_deal">
     <h4 class="widget-title">{{ trans('themes::activity.title.activities') }}</h4>
     <div class="widget-deal owl-carousel owl-single">
@@ -40,3 +41,4 @@
         })(jQuery);
     </script>
 @endpush
+@endif

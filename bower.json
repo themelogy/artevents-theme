@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "owl.carousel": "^2.3.4",
-    "jssocials": "^1.5.0"
+    "jssocials": "^1.5.0",
+    "lightbox2": "^2.10.0"
   }
 }
