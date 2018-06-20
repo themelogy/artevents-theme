@@ -21,7 +21,7 @@
                         @isset($page->files)
                             @foreach($page->files as $file)
                                 <div>
-                                    <a href="{!! Imagy::getImage($file->filename, 'pageThumbnail', ['width'=>700, 'height'=>null, 'mode'=>'resize', 'quality'=>80]) !!}" data-lightbox="image" data-title="{{ $page->title }}">
+                                    <a href="{!! Imagy::getImage($file->filename, 'pageThumbnail', ['width'=>800, 'height'=>null, 'mode'=>'resize', 'quality'=>80]) !!}" data-lightbox="image" data-title="{{ $page->title }}">
                                     {!! Html::image(Imagy::getImage($file->filename, 'pageThumbnail', ['width'=>400, 'height'=>300, 'mode'=>'fit', 'quality'=>80]), $page->title) !!}
                                     </a>
                                 </div>
@@ -40,16 +40,35 @@
                     {!! Asset::add(Theme::url('vendor/lightbox2/dist/js/lightbox.min.js')) !!}
                 @endpush
                 @push('js-inline')
+                    <style>
+                        .owl-dots {
+                            padding: 10px 0;
+                            text-align: center;
+                        }
+                        .owl-dots span {
+                            background: none repeat scroll 0 0 #869791;
+                            border-radius: 20px;
+                            display: block;
+                            height: 12px;
+                            margin: 5px 7px;
+                            opacity: 0.5;
+                            width: 12px;
+                        }
+                        .owl-dots button.active span {
+                            background: none repeat scroll 0 0 #353e3a;
+                        }
+                    </style>
                     <script>
                         $(document).ready(function(){
                             $(".owl-carousel").owlCarousel({
                                 items: 4,
                                 margin: 20,
-                                loop: true,
-                                nav:true,
+                                loop: false,
+                                dots: true,
                                 lazyLoad: true,
                                 autoplay: true,
-                                autoplayTimeout: 3000,
+                                autoplayTimeout: 5000,
+                                rewind: true,
                                 responsive : {
                                     0 : {
                                         items: 1
@@ -64,8 +83,7 @@
                                         items: 3
                                     },
                                     1280 : {
-                                        items: 4,
-                                        nav:true
+                                        items: 4
                                     }
                                 }
                             });
