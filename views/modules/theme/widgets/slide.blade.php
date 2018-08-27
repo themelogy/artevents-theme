@@ -24,7 +24,7 @@
                     @endif
                     data-description="">
                     <!-- MAIN IMAGE -->
-                    <img data-lazyload="{!! $slide->present()->firstImage(1170,600,'fit',80) !!}"
+                    <img data-lazyload="{!! $slide->present()->firstImage(1170,500,'fit',80) !!}"
                          alt="{{ $slide->title }}"
                          data-bgposition="center center"
                          data-bgfit="cover"
@@ -50,7 +50,7 @@
 @push('js-inline')
 <script type="text/javascript">
     $("#rev_slider_4_1").show().revolution({
-        sliderType: "carousel",
+        sliderType: "standard",
         jsFileLocation: "themes/artevents/vendor/revolution/js/",
         sliderLayout: "fullwidth",
         dottedOverlay: "none",
@@ -115,7 +115,7 @@
         },
         responsiveLevels: [1170, 1024, 778, 480],
         gridwidth: [1170, 1024, 778, 480],
-        gridheight: [600, 500, 400, 300],
+        gridheight: [500, 450, 400, 350],
         lazyType: "smart",
         parallax: {
             type: "mouse",

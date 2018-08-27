@@ -22,33 +22,33 @@ $default-bg-color               : darken(white, 7%);
 $default-txt-color              : $themecolor;
 
 //Header
-$header-bg-color                : rgba($themecolor-dark, 0.65);
+$header-bg-color                : rgba($white, 1);
 $header-top-bg-color            : $white;
 $header-logo-bg-color           : $white;
 
 $top-link-color                 : $grey;
 $top-link-hover-color           : $themecolor;
 $top-dropdown-bg-color          : #fff;
-$top-dropdown-hover-bg-color    : $themecolor-alt;
-$top-dropdown-hover-color       : darken(white, 60%);
-$top-dropdown-current-bg-color  : $themecolor-alt;
-$top-dropdown-current-color     : darken(white, 60%);
+$top-dropdown-hover-bg-color    : $themecolor-alt2;
+$top-dropdown-hover-color       : $white;
+$top-dropdown-current-bg-color  : $themecolor-alt2;
+$top-dropdown-current-color     : $white;
 
 $menu-link-current-bg-color     : transparent;
-$menu-link-current-color        : $themecolor-alt;
-$menu-link-border-color         : $themecolor-alt;
-$menu-link-color                : #fff;
-$menu-link-hover-bg-color       : $themecolor-alt;
-$menu-link-hover-color          : $themecolor-alt;
+$menu-link-current-color        : $themecolor-alt2;
+$menu-link-border-color         : $themecolor-alt2;
+$menu-link-color                : $dark-grey;
+$menu-link-hover-bg-color       : $themecolor-alt2;
+$menu-link-hover-color          : $themecolor-alt2;
 
-$menu-sub-bg-color              : $themecolor-alt;
-$menu-sub-border                : 1px solid $themecolor-alt;
+$menu-sub-bg-color              : $themecolor-alt2;
+$menu-sub-border                : transparent;
 $menu-sub-padding               : 0;
 
 $menu-sub-link-color            : #fff;
-$menu-sub-hover-bg-color        : $themecolor-dark;
-$menu-sub-hover-color           : $themecolor-alt;
-$menu-sub-current-bg-color      : darken(white, 60%);
+$menu-sub-hover-bg-color        : $grey;
+$menu-sub-hover-color           : $white;
+$menu-sub-current-bg-color      : $white;
 $menu-sub-current-color         : $themecolor-alt;
 
 $mobile-menu-bars-bg-color        : $themecolor;

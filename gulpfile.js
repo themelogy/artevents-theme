@@ -153,7 +153,7 @@ gulp.task('production', ['clear-public', 'sass-source', 'jalendar-sass', 'revolu
 });
 
 // Configure the proxy server for livereload
-var proxyServer = "http://dev.psm.com";
+var proxyServer = "http://dev.panorasm.com";
 
 var arrAddFiles = [
     'views/**/*.php'

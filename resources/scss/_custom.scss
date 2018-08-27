@@ -33,7 +33,7 @@
         }
         img {
           max-height: 120px;
-          padding-top: 0;
+          padding-top: 10px;
         }
       }
     }
@@ -305,4 +305,10 @@
 
 .align-center {
   text-align: center;
+}
+
+@media (min-width: 1215px) {
+  .section-slider {
+    margin-top: 84px;
+  }
 }
