@@ -489,15 +489,15 @@
             GuestBookMasonry();
         });
 
-        $(window).scroll(function(event) {
-            MenuSticky();
-        });
+        // $(window).scroll(function(event) {
+        //     MenuSticky();
+        // });
 
         $(window).resize(function(event) {
-            ParallaxScroll();
+            //ParallaxScroll(); 
             PopupCenter();
             MenuResize();
-            MenuSticky();
+            //MenuSticky();
             AttractionClick();
         }).trigger('resize');
         

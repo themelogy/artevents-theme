@@ -311,7 +311,7 @@
 }
 
 .menu-bars {
-	color: #fff;
+	color: $dark-grey;
 	width: 50px;
 	font-size: 28px;
 	cursor: pointer;
@@ -328,7 +328,7 @@
 		left: 0; top: 0; bottom: 0; right: 0;
 		margin: auto;
 		height: 2px;
-		background-color: #fff;
+		background-color: $dark-grey;
 		display: block;
 		position: absolute;
 		@include transition(all 0.3s ease);
@@ -338,7 +338,7 @@
 			content: '';
 			height: 2px;
 			width: 100%;
-			background-color: #fff;
+			background-color: $dark-grey;
 			@include transition(all 0.3s ease);
 		}
 
@@ -389,10 +389,9 @@
 }
 
 .header_mobile {
-	background-color: rgba($themecolor-dark, 0.85);
+	background-color: $header-bg-color;
 	left: 0; right: 0;
 	z-index: 999;
-	position: absolute;
 
 	.container {
 		position: relative;

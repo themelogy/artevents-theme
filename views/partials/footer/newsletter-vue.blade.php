@@ -3,7 +3,7 @@
     <div class="mailchimp-form" id="newsletter">
         {!! Form::open(['v-on:submit'=>'subscribe', 'method'=>'post', 'class'=>'form-inline']) !!}
         <div class="form-group">
-            <input placeholder="{{ trans('themes::theme.newsletter.name') }}" value="" type="text" name="name" v-bind:class="errors.name ? 'has-error' : ''" class="input-text required" v-model="name">
+            <input placeholder="{!! trans('themes::theme.newsletter.name') !!}" value="" type="text" name="name" v-bind:class="errors.name ? 'has-error' : ''" class="input-text required" v-model="name">
             <span v-if="errors.name" class="help-block has-error">@{{ errors.name[0] }}</span>
         </div>
         <div class="form-group">

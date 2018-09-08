@@ -30,7 +30,7 @@
                     <!-- EVENT -->
                     <div class="col-md-6">
                         <div class="event">
-                            <h2 class="heading">GELECEK GÖSTERİLER</h2>
+                            <h2 class="heading">{{ trans('themes::activity.title.upcoming events') }}</h2>
 
                             <div class="row">
 
