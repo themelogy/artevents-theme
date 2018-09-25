@@ -17,7 +17,7 @@
 {!! Theme::style("css/lib/bootstrap-select.min.css") !!}
 
 <!-- MAIN STYLE -->
-{!! Theme::style("css/style.css") !!}
+{!! Theme::style("css/style.css?v=40") !!}
 
 @push('js-inline')
     <script type="text/javascript"> WebFontConfig = {

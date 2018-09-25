@@ -41,7 +41,7 @@
                 items: 3,
                 nav: true,
                 navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
-                loop: true,
+                loop: false,
                 autoplay: true,
                 autoplayTimeout: 8000,
                 lazyLoad: true,

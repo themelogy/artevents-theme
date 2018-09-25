@@ -3,7 +3,7 @@
 <head>
 @include('partials.metadata')
 </head>
-<body>
+<body class="{{ $body_class ?? '' }}">
 @include('partials.components.preloader')
 <div id="page-wrap">
     @include('partials.header')
