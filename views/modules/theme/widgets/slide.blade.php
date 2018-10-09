@@ -1,6 +1,6 @@
 @if(count($slides)>0)
 <section class="section-slider">
-    <div id="rev_slider_4_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.1">
+    <div id="rev_slider_4_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.8">
         <ul>
             @foreach($slides as $slide)
                 <li data-index="rs-{{ $loop->iteration }}"
@@ -37,9 +37,9 @@
                              data-volume="{{ $slide->settings->video_sound == 'on' ? 70 : 'mute' }}"
                              data-{{ $slide->settings->video_type }}="{{ $slide->video }}"
                              @if($slide->settings->video_type=='ytid')
-                             data-videoattributes="version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&ref=0;autoplay=1;origin={{ url('/') }};"
+                             data-videoattributes="version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&origin={{ url('/') }};"
                              @else
-                             data-videoattributes="background=0&title=0&byline=0&portrait=0&api=1"
+                             data-videoattributes="background=1&title=0&byline=0&portrait=0&api=1"
                              @endif
                              data-videorate="1.0"
                              data-videowidth="100%"
@@ -66,12 +66,10 @@
 @push('js-inline')
 
 {!! Theme::style('vendor/revolution/css/settings.css') !!}
-{!! Theme::style('vendor/revolution/css/layers.css') !!}
-{!! Theme::style('vendor/revolution/css/navigation.css') !!}
 {!! Theme::script('vendor/revolution/js/jquery.revolution.min.js') !!}
 
 <script type="text/javascript">
-    $("#rev_slider_4_1").show().revolution({
+    var revapi = $("#rev_slider_4_1").show().revolution({
         sliderType: "standard",
         jsFileLocation: "{{ Theme::url('vendor/revolution/js/') }}",
         videoJsPath: "{{ Theme::url('vendor/revolution/js/') }}",
@@ -146,12 +144,7 @@
         hideSliderAtLimit: 0,
         hideCaptionAtLimit: 0,
         hideAllCaptionAtLilmit: 0,
-        debugMode: false,
-        fallbacks: {
-            simplifyAll: "off",
-            nextSlideOnWindowFocus: "off",
-            disableFocusListener: false
-        }
+        debugMode: false
     });
 </script>
 @endpush
