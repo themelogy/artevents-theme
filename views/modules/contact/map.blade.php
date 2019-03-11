@@ -18,7 +18,7 @@
                 position: center,
                 map: map,
                 title: "{{ setting('theme::company-name') }}",
-                icon: "{{ Theme::url('imgages/logos/logo.svg') }}"
+                icon: "{{ Theme::url('images/logos/marker.svg') }}"
             });
 
             marker.addListener('click', function () {

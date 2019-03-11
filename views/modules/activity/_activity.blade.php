@@ -7,7 +7,7 @@
             <h2><a href="{{ $activity->url }}">{{ $activity->title }}</a></h2>
             <span class="price">{{ $activity->category->title }}</span>
         </div>
-        <div class="count-date" data-end="{{ $activity->events()->first()->event_at->format('Y/m/d H:i:s') }}"></div>
+        <div class="count-date" data-end="{{ $activity->events()->activated()->first()->event_at->format('Y/m/d H:i:s') }}"></div>
         <div class="room_item-back">
             <h3>{{ $activity->title }}</h3>
             <a href="{{ $activity->category->url }}"><span class="price">{{ $activity->category->title }}</span></a>

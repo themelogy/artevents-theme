@@ -28,8 +28,8 @@
             </div>
             <div class="col-sm-6">
                 <div class="@if ($errors->has('g-recaptcha-response')) has-error @endif">
-                    {!! Captcha::display() !!}
-                    <span class="help-block red-text"><small>{!! $errors->first('g-recaptcha-response') !!}</small></span>
+                    {!! Captcha::display('captcha_contact') !!}
+                    <span class="help-block red-text"><small>{!! $errors->first('captcha_contact') !!}</small></span>
                 </div>
                 <button type="submit" name="submit" class="awe-btn awe-btn-13">{{ trans('contact::contacts.form.submit') }}</button>
             </div>
@@ -39,5 +39,5 @@
 </div>
 
 @push('js-inline')
-    {!! Captcha::script() !!}
+    {!! Captcha::scriptWithCallback(['captcha_contact']) !!}
 @endpush

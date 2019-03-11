@@ -3,7 +3,7 @@
     <div class="events-item">
         <div class="img">
             <a href="{{ $activity->url }}">
-                <img class="owl-lazy img-responsive" data-src="{!! $activity->present()->coverImage(530,350,'fit',80) !!}" alt="{{ $activity->title }}">
+                <img class="owl-lazy img-responsive" data-src="{!! $activity->present()->coverImage(530,300,'fit',80) !!}" alt="{{ $activity->title }}">
             </a>
         </div>
         <div class="text">

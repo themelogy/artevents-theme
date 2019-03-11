@@ -65,8 +65,8 @@
 
 @push('js-inline')
 
-{!! Theme::style('vendor/revolution/css/settings.css') !!}
-{!! Theme::script('vendor/revolution/js/jquery.revolution.min.js') !!}
+{!! Theme::style('vendor/revolution/css/settings.css?v=1') !!}
+{!! Theme::script('vendor/revolution/js/jquery.revolution.min.js?v=1') !!}
 
 <script type="text/javascript">
     var revapi = $("#rev_slider_4_1").show().revolution({

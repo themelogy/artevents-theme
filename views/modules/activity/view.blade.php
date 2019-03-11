@@ -24,10 +24,10 @@
                                     @if(!empty($activity->video_url))
                                     </a>
                                     @endif
-                                    <div class="count-date" data-end="{{ $activity->events()->first()->event_at->format('Y/m/d H:i:s') }}"></div>
+                                    <div class="count-date" data-end="{{ $activity->events()->activated()->first()->event_at->format('Y/m/d H:i:s') }}"></div>
                                 </div>
                                 <div class="entry-dates owl-carousel owl-event-dates">
-                                    @foreach($activity->events as $event)
+                                    @foreach($activity->events()->activated()->get() as $event)
                                         <div class="entry-date">
                                             <div class="date">
                                                 <span class="day">{{ $event->event_at->format('d') }}</span>
